@@ -6,9 +6,9 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/germanx/bookings/pkg/config"
-	"github.com/germanx/bookings/pkg/models"
-	"github.com/germanx/bookings/pkg/render"
+	"github.com/germanx/bookings/internal/config"
+	"github.com/germanx/bookings/internal/models"
+	"github.com/germanx/bookings/internal/render"
 )
 
 var Repo *Repository
@@ -90,7 +90,6 @@ func (m *Repository) AvailabilityJSON(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Println(err)
 	}
-
 
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(out)
